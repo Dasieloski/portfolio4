@@ -1,4 +1,5 @@
 import ProjectsGrid from "@/components/projects-grid"
+import ContactForm from "@/components/contact-form"
 
 export default function Home() {
   return (
@@ -190,21 +191,7 @@ export default function Home() {
           </div>
         </div>
         <div className="contact-form">
-          <form>
-            <div className="input-group">
-              <label>TU NOMBRE</label>
-              <input type="text" placeholder="Tu nombre" />
-            </div>
-            <div className="input-group">
-              <label>EMAIL</label>
-              <input type="email" placeholder="tu@email.com" />
-            </div>
-            <div className="input-group">
-              <label>MENSAJE</label>
-              <textarea rows={5} placeholder="Cuéntame sobre tu proyecto..."></textarea>
-            </div>
-            <button type="submit">ENVIAR MENSAJE</button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
