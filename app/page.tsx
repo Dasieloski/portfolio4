@@ -1,65 +1,217 @@
-import Image from "next/image";
+import ProjectsGrid from "@/components/projects-grid"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <nav>
+        <div
+          className="container"
+          style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}
+        >
+          <a href="#" className="logo">
+            DASIEL
+          </a>
+          <div className="nav-links">
+            <a href="#work">Proyectos</a>
+            <a href="#services">Servicios</a>
+            <a href="#contact">Contacto</a>
+          </div>
+        </div>
+      </nav>
+
+      <section className="hero">
+        <div className="hero-text">
+          <p className="hero-tagline">FULLSTACK DEVELOPER // CODE & DESIGN</p>
+          <h1>DASIEL</h1>
+          <p style={{ fontSize: "1.2rem", maxWidth: "700px", marginBottom: "30px" }}>
+            Desarrollador Fullstack especializado en crear aplicaciones web completas. Desde el frontend hasta el backend,
+            construyo soluciones escalables y modernas que combinan excelencia técnica con diseño funcional.
           </p>
+          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+            <a href="#work" className="brutal-btn">
+              VER MIS PROYECTOS
+            </a>
+            <a href="/Dasiel%20Torres%20CV(Espa%C3%B1ol).pdf" download className="brutal-btn brutal-btn-cv">
+              DESCARGAR CV
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hero-visual">
+          <div className="code-block">
+            <div className="code-header">
+              <span className="code-dot"></span>
+              <span className="code-dot"></span>
+              <span className="code-dot"></span>
+              <span className="code-title">stack.ts</span>
+            </div>
+            <pre className="code-content">
+{`const stack = {
+  frontend: [
+    "HTML5/CSS3",
+    "JavaScript/TypeScript",
+    "React/Next.js",
+    "Tailwind/SASS",
+    "Redux/Zustand"
+  ],
+  backend: [
+    "Node.js/Nest.js",
+    "REST API/GraphQL",
+    "MongoDB/PostgreSQL",
+    "Firebase/Supabase"
+  ],
+  tools: [
+    "Git/GitHub",
+    "Docker",
+    "AWS/Vercel",
+    "Jest/Cypress",
+    "CI/CD/GitHub Actions"
+  ]
+};`}
+            </pre>
+          </div>
+          <div className="geometric-shapes">
+            <div className="shape shape-1"></div>
+            <div className="shape shape-2"></div>
+            <div className="shape shape-3"></div>
+          </div>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      <div className="marquee">
+        <div className="marquee-content">
+          GIT // GITHUB // DOCKER // AWS // VERCEL // JEST // CYPRESS // CI/CD // GITHUB ACTIONS // GIT // GITHUB //
+          DOCKER // AWS // VERCEL // JEST // CYPRESS // CI/CD // GITHUB ACTIONS //
+        </div>
+      </div>
+
+      <h2 className="section-title" id="work">
+        Proyectos Destacados
+      </h2>
+
+      <ProjectsGrid />
+
+      <section className="services" id="services">
+        <div className="service-box">
+          <h3>FRONTEND</h3>
+          <ul className="skill-list">
+            <li className="skill-item">
+              <span>HTML5 / CSS3</span>
+            </li>
+            <li className="skill-item">
+              <span>JavaScript / TypeScript</span>
+            </li>
+            <li className="skill-item">
+              <span>React / Next.js</span>
+            </li>
+            <li className="skill-item">
+              <span>Tailwind CSS / SASS</span>
+            </li>
+            <li className="skill-item">
+              <span>Redux / Zustand</span>
+            </li>
+          </ul>
+        </div>
+        <div className="service-box">
+          <h3>BACKEND</h3>
+          <ul className="skill-list">
+            <li className="skill-item">
+              <span>Node.js / Nest.js</span>
+            </li>
+            <li className="skill-item">
+              <span>REST API / GraphQL</span>
+            </li>
+            <li className="skill-item">
+              <span>MongoDB / PostgreSQL</span>
+            </li>
+            <li className="skill-item">
+              <span>Firebase / Supabase</span>
+            </li>
+          </ul>
+        </div>
+        <div className="service-box">
+          <h3>HERRAMIENTAS</h3>
+          <ul className="skill-list">
+            <li className="skill-item">
+              <span>Git / GitHub</span>
+            </li>
+            <li className="skill-item">
+              <span>Docker / Kubernetes</span>
+            </li>
+            <li className="skill-item">
+              <span>AWS / Vercel / Netlify</span>
+            </li>
+            <li className="skill-item">
+              <span>Jest / Cypress</span>
+            </li>
+            <li className="skill-item">
+              <span>CI/CD / GitHub Actions</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="contact" id="contact">
+        <div className="contact-info">
+          <h2 style={{ fontSize: "5rem", marginBottom: "20px" }}>HABLEMOS.</h2>
+          <p style={{ fontSize: "1.5rem", marginBottom: "40px" }}>
+            ¿Tienes un proyecto en mente? Estoy disponible para colaborar.
+          </p>
+          <p>
+            <strong>EMAIL:</strong> dasieldev@gmail.com
+          </p>
+          <p>
+            <strong>UBICACIÓN:</strong> Remoto / Disponible Globalmente
+          </p>
+          <div style={{ marginTop: "40px", display: "flex", gap: "20px", flexWrap: "wrap" }}>
+            <a
+              href="https://github.com/dasieloski"
+              style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 700 }}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GITHUB
+            </a>
+            <a
+              href="https://wa.me/5354710329?text=Hola%20Dasiel%2C%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto."
+              style={{ color: "var(--secondary)", textDecoration: "none", fontWeight: 700 }}
+              target="_blank"
+              rel="noreferrer"
+            >
+              WHATSAPP
+            </a>
+            <a
+              href="https://instagram.com/dasieloski"
+              style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 700 }}
+              target="_blank"
+              rel="noreferrer"
+            >
+              INSTAGRAM
+            </a>
+          </div>
+        </div>
+        <div className="contact-form">
+          <form>
+            <div className="input-group">
+              <label>TU NOMBRE</label>
+              <input type="text" placeholder="Tu nombre" />
+            </div>
+            <div className="input-group">
+              <label>EMAIL</label>
+              <input type="email" placeholder="tu@email.com" />
+            </div>
+            <div className="input-group">
+              <label>MENSAJE</label>
+              <textarea rows={5} placeholder="Cuéntame sobre tu proyecto..."></textarea>
+            </div>
+            <button type="submit">ENVIAR MENSAJE</button>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2026 DASIEL. DESARROLLADOR FULLSTACK.</p>
+        <div style={{ marginTop: "20px", fontSize: "0.8rem" }}>CONSTRUIDO CON NEXT.JS, REACT Y TYPESCRIPT.</div>
+      </footer>
+    </>
+  )
 }
